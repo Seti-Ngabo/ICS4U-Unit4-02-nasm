@@ -1,6 +1,7 @@
 ; ---------------------------------------------------------------
 ; Read a 2 digit decimal number and then print it to the console.
 ; Runs on 64-bit x86 Linux only.
+; Date: 2022-11-24, Author: Seti Ngabo
 ; ---------------------------------------------------------------
 
 section .bss
@@ -9,7 +10,7 @@ section .bss
 section .data
      newline db 10                  ; UNICODE 10 is new line character 
      prompt db "Enter a 2 digit number: ", 10
-     promptLen: equ $-input
+     promtpLen: equ $-input
      output: db "The number is: ", 10
      outputLen: equ $-output
      done: db 10, "Done.", 10
@@ -24,7 +25,7 @@ section .text
         mov rax, 1                 ; 3 is recognized by the system as meaning "read"
         mov rdi, 1                 ; read from standard input
         mov rsi, prompt          ; address of number to input
-        mov rdx, inputLen                 ; number of bytes
+        mov rdx, promptLen                 ; number of bytes
         syscall                   ; tell oparating system to exit
 
         ; read 2 bytes from stdin 
