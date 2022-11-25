@@ -9,8 +9,8 @@ section .bss
 
 section .data
      newline db 10                  ; UNICODE 10 is new line character 
-     prompt db "Enter a 2 digit number: ", 10
-     promtpLen: equ $-input
+     input db "Enter a 2 digit number: ", 10
+     inputLen: equ $-input
      output: db "The number is: ", 10
      outputLen: equ $-output
      done: db 10, "Done.", 10
@@ -24,8 +24,8 @@ section .text
 
         mov rax, 1                 ; 3 is recognized by the system as meaning "read"
         mov rdi, 1                 ; read from standard input
-        mov rsi, prompt          ; address of number to input
-        mov rdx, promptLen                 ; number of bytes
+        mov rsi, input          ; address of number to input
+        mov rdx, inputLen                 ; number of bytes
         syscall                   ; tell oparating system to exit
 
         ; read 2 bytes from stdin 
