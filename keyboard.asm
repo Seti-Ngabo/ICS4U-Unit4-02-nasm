@@ -21,7 +21,6 @@ section .text
     global _start                  ; entry point for linker
 
     _start:                        ; start here
-
         mov rax, 1                 ; 3 is recognized by the system as meaning "read"
         mov rdi, 1                 ; read from standard input
         mov rsi, input          ; address of number to input
