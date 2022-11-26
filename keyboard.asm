@@ -9,9 +9,9 @@ section .bss
 
 section .data
      newline db 10                  ; UNICODE 10 is new line character 
-     input: db "Enter a 2 digit number: ", 10
+     input: db "Enter a 2 digit number: "
      inputLen: equ $-input
-     output: db "The number is: ", 10
+     output: db "The number is: "
      outputLen: equ $-output
      done: db 10, "Done.", 10
      doneLen: equ $-done
